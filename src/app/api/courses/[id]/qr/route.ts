@@ -23,8 +23,10 @@ export async function POST(
         return NextResponse.json({ error: 'Course not found' }, { status: 404 })
     }
 
-    // Generate registration URL
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    // Generate registration URL - use request host for dynamic URL
+    const host = request.headers.get('host') || 'localhost:3000'
+    const protocol = host.includes('localhost') ? 'http' : 'https'
+    const baseUrl = `${protocol}://${host}`
     const registrationUrl = `${baseUrl}/register/${id}`
 
     // Generate QR code as data URL
