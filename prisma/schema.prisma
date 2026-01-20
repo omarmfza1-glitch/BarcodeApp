@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Course {
+  id                 String     @id @default(cuid())
+  name               String
+  startDate          DateTime
+  duration           String
+  location           String
+  instructors        String
+  allowMultiplePerDevice Boolean @default(false)
+  maxPerDevice       Int        @default(1)
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+  attendees          Attendee[]
+}
+
+model Attendee {
+  id             String   @id @default(cuid())
+  nationalId     String
+  firstName      String
+  secondName     String
+  thirdName      String
+  lastName       String
+  phone          String
+  computerNumber String?
+  jobTitle       String
+  workplace      String
+  deviceId       String
+  courseId       String
+  course         Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+
+  @@index([courseId])
+  @@index([deviceId, courseId])
+}

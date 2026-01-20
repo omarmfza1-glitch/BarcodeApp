@@ -1,0 +1,162 @@
+.container {
+    max-width: 1000px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 30px 0;
+}
+
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--gray-100);
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 8px 0;
+}
+
+.sectionDesc {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin: 0 0 24px 0;
+}
+
+.fontsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.fontCard {
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.fontCard:hover {
+    border-color: var(--primary);
+    background: rgba(13, 148, 136, 0.03);
+}
+
+.fontCard.selected {
+    border-color: var(--primary);
+    background: rgba(13, 148, 136, 0.05);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.fontHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.fontName {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.fontNameEn {
+    font-size: 12px;
+    color: var(--gray-400);
+}
+
+.fontSample {
+    font-size: 24px;
+    color: var(--secondary);
+    margin: 0 0 8px 0;
+    line-height: 1.8;
+}
+
+.fontSample2 {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.fontDesc {
+    font-size: 12px;
+    color: var(--gray-400);
+    margin: 0;
+}
+
+.selectedBadge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.saveBtn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.saveBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.infoItem {
+    background: var(--gray-50);
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.infoLabel {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.infoValue {
+    font-size: 15px;
+    color: var(--secondary);
+    font-weight: 600;
+}
